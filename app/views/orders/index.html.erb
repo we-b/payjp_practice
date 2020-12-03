@@ -1,4 +1,4 @@
-<%= form_with  url: orders_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+<%= form_with  model: @order, id: 'charge-form', class: 'card-form',local: true do |f| %>
   <%= render 'layouts/error_messages', model: @order %>
   <div class='form-wrap'>
     <%= f.label :price, "金額" %>
@@ -10,7 +10,7 @@
   </div>
   <div class='form-wrap'>
     <%= f.label :cvc ,"ＣＶＣ" %>
-    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"3" %>
+    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
   </div>
   <div class='form-wrap'>
     <p>有効期限</p>
